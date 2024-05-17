@@ -132,12 +132,6 @@ bool dispatchPointerEvent(ofAppBaseWindow* window, PointerEventArgs& e)
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
-
 -(void) resetTouches
 {
     _activePointerIndices[UITouchTypeDirect] = {};
@@ -606,7 +600,6 @@ void DisableAdvancedPointerEventsiOS()
     if (pointerView)
     {
         [pointerView removeFromSuperview];
-        [pointerView release];
         pointerView = nullptr;
     }
 }
